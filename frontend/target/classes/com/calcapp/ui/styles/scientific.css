@@ -1,0 +1,59 @@
+/* ─── Scientific Panel ─── */
+.scientific-panel {
+    -fx-background-color: -c-surface;
+    -fx-min-width: 210px;
+    -fx-pref-width: 210px;
+    -fx-border-color: transparent -c-border transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+.sci-section-label {
+    -fx-text-fill: -c-text-muted;
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+    -fx-letter-spacing: 0.14em;
+    -fx-padding: 8 0 4 0;
+}
+
+.sci-btn {
+    -fx-background-color: -c-surface-2;
+    -fx-text-fill: -c-text-secondary;
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 10px;
+    -fx-padding: 10 6 10 6;
+    -fx-cursor: hand;
+    -fx-min-height: 38px;
+}
+
+.sci-btn:hover {
+    -fx-background-color: -c-surface-3;
+    -fx-text-fill: -c-text-primary;
+}
+
+.sci-btn:pressed {
+    -fx-background-color: derive(-c-accent, -75%);
+    -fx-text-fill: -c-accent;
+}
+
+.sci-btn--toggle {
+    -fx-background-color: -c-surface-3;
+    -fx-text-fill: -c-text-primary;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-letter-spacing: 0.1em;
+}
+
+.sci-btn--toggle:hover {
+    -fx-background-color: derive(-c-accent, -70%);
+    -fx-text-fill: -c-accent;
+}
+
+.sci-btn--const {
+    -fx-text-fill: -c-accent;
+    -fx-background-color: derive(-c-accent, -80%);
+}
+
+.sci-btn--const:hover {
+    -fx-background-color: derive(-c-accent, -70%);
+}

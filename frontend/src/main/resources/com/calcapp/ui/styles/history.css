@@ -1,0 +1,86 @@
+/* ─── History Panel ─── */
+.history-panel {
+    -fx-background-color: -c-surface;
+    -fx-min-width: 220px;
+    -fx-pref-width: 220px;
+    -fx-border-color: -c-border transparent transparent transparent;
+    -fx-border-width: 0 0 0 1;
+}
+
+.history-header {
+    -fx-background-color: -c-surface;
+    -fx-border-color: transparent transparent -c-border transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.history-title {
+    -fx-text-fill: -c-text-primary;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-letter-spacing: 0.06em;
+}
+
+.history-clear-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -c-text-muted;
+    -fx-font-size: 11px;
+    -fx-background-radius: 6px;
+    -fx-padding: 4 8 4 8;
+    -fx-cursor: hand;
+    -fx-border-color: -c-border;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+}
+
+.history-clear-btn:hover {
+    -fx-text-fill: -c-error;
+    -fx-border-color: -c-error;
+}
+
+.history-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.history-list {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.history-row {
+    -fx-background-color: transparent;
+    -fx-padding: 12 12 12 14;
+    -fx-border-color: transparent transparent -c-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-cursor: hand;
+}
+
+.history-row:hover {
+    -fx-background-color: -c-surface-2;
+}
+
+.history-expr {
+    -fx-text-fill: -c-text-muted;
+    -fx-font-size: 11px;
+    -fx-wrap-text: true;
+}
+
+.history-result {
+    -fx-text-fill: -c-text-primary;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+}
+
+.history-use-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -c-text-muted;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8px;
+    -fx-padding: 4 6 4 6;
+    -fx-cursor: hand;
+}
+
+.history-use-btn:hover {
+    -fx-background-color: -c-surface-3;
+    -fx-text-fill: -c-accent;
+}

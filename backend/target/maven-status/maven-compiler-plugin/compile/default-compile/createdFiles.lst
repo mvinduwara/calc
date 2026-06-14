@@ -1,0 +1,7 @@
+com\calcapp\core\HistoryManager.class
+com\calcapp\core\ScientificFunctions.class
+com\calcapp\core\MemoryStore.class
+com\calcapp\core\model\HistoryEntry.class
+com\calcapp\core\ExpressionEvaluator.class
+com\calcapp\core\model\CalculationResult.class
+com\calcapp\core\Calculator.class

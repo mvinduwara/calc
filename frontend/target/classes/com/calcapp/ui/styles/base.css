@@ -1,0 +1,74 @@
+/* ─── Design Tokens ─── */
+.root {
+    /* Surface */
+    -c-bg:          #0f0f0f;
+    -c-surface:     #1a1a1a;
+    -c-surface-2:   #242424;
+    -c-surface-3:   #2e2e2e;
+    -c-border:      #333333;
+
+    /* Text */
+    -c-text-primary:   #f0f0f0;
+    -c-text-secondary: #888888;
+    -c-text-muted:     #555555;
+
+    /* Accent */
+    -c-accent:      #c8ff00;
+    -c-accent-dim:  #9bbf00;
+
+    /* Semantic */
+    -c-op:          #2a2a2a;
+    -c-op-hover:    #3a3a3a;
+    -c-fn:          #222222;
+    -c-fn-hover:    #333333;
+    -c-eq:          #c8ff00;
+    -c-eq-hover:    #d4ff33;
+    -c-eq-text:     #0f0f0f;
+    -c-error:       #ff4444;
+
+    /* Typography */
+    -fx-font-family: "Helvetica Neue", "Arial", sans-serif;
+
+    /* Radius */
+    -r-btn:    14px;
+    -r-card:   18px;
+}
+
+/* ─── Global Resets ─── */
+* {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.root-container {
+    -fx-background-color: -c-bg;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-pref-width: 4px;
+    -fx-pref-height: 4px;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: -c-border;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .track,
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}

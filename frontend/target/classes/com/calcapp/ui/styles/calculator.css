@@ -1,0 +1,197 @@
+/* ─── Top Bar ─── */
+.top-bar {
+    -fx-background-color: -c-bg;
+    -fx-padding: 12 16 12 20;
+    -fx-border-color: transparent transparent -c-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-min-height: 52px;
+}
+
+.app-title {
+    -fx-text-fill: -c-text-primary;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-letter-spacing: 0.18em;
+}
+
+.mode-chip {
+    -fx-text-fill: -c-text-muted;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-letter-spacing: 0.12em;
+    -fx-background-color: -c-surface-2;
+    -fx-background-radius: 6px;
+    -fx-padding: 3 8 3 8;
+}
+
+.memory-chip {
+    -fx-text-fill: -c-accent;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-background-color: derive(-c-accent, -80%);
+    -fx-background-radius: 6px;
+    -fx-padding: 3 8 3 8;
+}
+
+.icon-btn {
+    -fx-background-color: -c-surface-2;
+    -fx-text-fill: -c-text-secondary;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-letter-spacing: 0.08em;
+    -fx-background-radius: 8px;
+    -fx-padding: 5 10 5 10;
+    -fx-cursor: hand;
+}
+
+.icon-btn:hover {
+    -fx-background-color: -c-surface-3;
+    -fx-text-fill: -c-text-primary;
+}
+
+.icon-btn.active {
+    -fx-background-color: derive(-c-accent, -70%);
+    -fx-text-fill: -c-accent;
+}
+
+/* ─── Calc Core ─── */
+.calc-core {
+    -fx-background-color: -c-bg;
+}
+
+/* ─── Display Area ─── */
+.display-area {
+    -fx-background-color: -c-bg;
+    -fx-min-height: 140px;
+    -fx-pref-height: 160px;
+}
+
+.expression-label {
+    -fx-text-fill: -c-text-muted;
+    -fx-font-size: 14px;
+    -fx-font-weight: 400;
+    -fx-wrap-text: true;
+    -fx-text-alignment: right;
+    -fx-min-height: 22px;
+}
+
+.result-label {
+    -fx-text-fill: -c-text-primary;
+    -fx-font-size: 52px;
+    -fx-font-weight: 300;
+    -fx-wrap-text: true;
+    -fx-text-alignment: right;
+    -fx-min-height: 70px;
+}
+
+.result-label.error {
+    -fx-text-fill: -c-error;
+    -fx-font-size: 28px;
+}
+
+/* ─── Memory Row ─── */
+.memory-row {
+    -fx-background-color: -c-bg;
+    -fx-padding: 0 12 8 12;
+}
+
+.mem-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -c-text-muted;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-letter-spacing: 0.05em;
+    -fx-background-radius: 8px;
+    -fx-padding: 6 4 6 4;
+    -fx-cursor: hand;
+    -fx-border-color: -c-border;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+}
+
+.mem-btn:hover {
+    -fx-background-color: -c-surface-2;
+    -fx-text-fill: -c-text-primary;
+    -fx-border-color: -c-surface-3;
+}
+
+/* ─── Keypad ─── */
+.keypad {
+    -fx-background-color: -c-bg;
+}
+
+/* Base key */
+.key {
+    -fx-font-size: 20px;
+    -fx-font-weight: 400;
+    -fx-background-radius: -r-btn;
+    -fx-cursor: hand;
+    -fx-min-height: 64px;
+    -fx-pref-height: 72px;
+    -fx-effect: null;
+}
+
+.key:hover {
+    -fx-effect: null;
+}
+
+/* Number keys */
+.key--num {
+    -fx-background-color: -c-surface;
+    -fx-text-fill: -c-text-primary;
+}
+
+.key--num:hover {
+    -fx-background-color: -c-surface-2;
+}
+
+.key--num:pressed {
+    -fx-background-color: -c-surface-3;
+}
+
+/* Operator keys */
+.key--op {
+    -fx-background-color: -c-op;
+    -fx-text-fill: -c-accent;
+    -fx-font-size: 22px;
+    -fx-font-weight: 300;
+}
+
+.key--op:hover {
+    -fx-background-color: -c-op-hover;
+}
+
+.key--op:pressed {
+    -fx-background-color: -c-surface-3;
+}
+
+/* Function keys */
+.key--fn {
+    -fx-background-color: -c-fn;
+    -fx-text-fill: -c-text-secondary;
+    -fx-font-size: 17px;
+}
+
+.key--fn:hover {
+    -fx-background-color: -c-fn-hover;
+}
+
+.key--fn:pressed {
+    -fx-background-color: -c-surface-2;
+}
+
+/* Equals key */
+.key--eq {
+    -fx-background-color: -c-eq;
+    -fx-text-fill: -c-eq-text;
+    -fx-font-size: 24px;
+    -fx-font-weight: 600;
+}
+
+.key--eq:hover {
+    -fx-background-color: -c-eq-hover;
+}
+
+.key--eq:pressed {
+    -fx-background-color: derive(-c-eq, -15%);
+}
