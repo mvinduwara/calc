@@ -1,1 +1,4 @@
+com\calcapp\ui\MainController.class
+com\calcapp\ui\theme\ThemeManager$Theme.class
 com\calcapp\ui\App.class
+com\calcapp\ui\theme\ThemeManager.class

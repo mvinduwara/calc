@@ -9,118 +9,85 @@
       styleClass="root-container"
       spacing="0">
 
-    <!-- Top bar -->
     <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="8">
         <Label text="CALC" styleClass="app-title"/>
         <Region HBox.hgrow="ALWAYS"/>
         <Label fx:id="modeLabel" styleClass="mode-chip" text="DEG"/>
         <Label fx:id="memoryIndicator" text="M" styleClass="memory-chip"/>
-        <Button fx:id="toggleHistoryBtn" text="⏱" styleClass="icon-btn" onAction="#handleToggleHistory"/>
+        <Button fx:id="toggleHistoryBtn" text="H" styleClass="icon-btn" onAction="#handleToggleHistory"/>
         <Button fx:id="toggleScientificBtn" text="SCI" styleClass="icon-btn" onAction="#handleToggleScientific"/>
     </HBox>
 
-    <!-- Main content area -->
     <HBox VBox.vgrow="ALWAYS" spacing="0">
 
-        <!-- Scientific Panel (hidden by default) -->
-        <VBox fx:id="scientificPanel" styleClass="scientific-panel" visible="false" managed="false" spacing="6">
-            <padding><Insets top="12" right="8" bottom="12" left="12"/></padding>
+        <VBox fx:id="scientificPanel" styleClass="scientific-panel" visible="false" managed="false" spacing="4">
+            <padding><Insets top="10" right="6" bottom="10" left="10"/></padding>
 
-            <!-- Angle toggle -->
-            <Button fx:id="degRadBtn" text="DEG" styleClass="sci-btn sci-btn--toggle" maxWidth="Infinity" onAction="#handleToggleDegRad"/>
+            <Button fx:id="degRadBtn" text="DEG" styleClass="sci-btn" maxWidth="Infinity" onAction="#handleToggleDegRad"/>
 
             <Label text="TRIG" styleClass="sci-section-label"/>
-            <GridPane hgap="6" vgap="6">
+            <GridPane hgap="4" vgap="4">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="33.3"/>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="33.3"/>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="33.3"/>
+                </columnConstraints>
                 <Button text="sin" styleClass="sci-btn" onAction="#handleSin" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                 <Button text="cos" styleClass="sci-btn" onAction="#handleCos" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
                 <Button text="tan" styleClass="sci-btn" onAction="#handleTan" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
                 <Button text="asin" styleClass="sci-btn" onAction="#handleAsin" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                 <Button text="acos" styleClass="sci-btn" onAction="#handleAcos" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 <Button text="atan" styleClass="sci-btn" onAction="#handleAtan" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-                <columnConstraints><ColumnConstraints hgrow="ALWAYS" percentWidth="33.3"/></columnConstraints>
-                <columnConstraints><ColumnConstraints hgrow="ALWAYS" percentWidth="33.3"/></columnConstraints>
-                <columnConstraints><ColumnConstraints hgrow="ALWAYS" percentWidth="33.3"/></columnConstraints>
             </GridPane>
 
-            <Label text="LOG &amp; POWER" styleClass="sci-section-label"/>
-            <GridPane hgap="6" vgap="6">
+            <Label text="LOG AND POWER" styleClass="sci-section-label"/>
+            <GridPane hgap="4" vgap="4">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                </columnConstraints>
                 <Button text="log" styleClass="sci-btn" onAction="#handleLog" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                 <Button text="ln" styleClass="sci-btn" onAction="#handleLn" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                <Button text="x²" styleClass="sci-btn" onAction="#handleSquare" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                <Button text="x³" styleClass="sci-btn" onAction="#handleCube" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                <Button text="xⁿ" styleClass="sci-btn" onAction="#handlePower" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                <Button text="√" styleClass="sci-btn" onAction="#handleSqrt" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                <Button text="∛" styleClass="sci-btn" onAction="#handleCbrt" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Button text="x2" styleClass="sci-btn" onAction="#handleSquare" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Button text="x3" styleClass="sci-btn" onAction="#handleCube" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Button text="xn" styleClass="sci-btn" onAction="#handlePower" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Button text="sqrt" styleClass="sci-btn" onAction="#handleSqrt" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Button text="cbrt" styleClass="sci-btn" onAction="#handleCbrt" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
                 <Button text="n!" styleClass="sci-btn" onAction="#handleFactorial" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-                <columnConstraints><ColumnConstraints hgrow="ALWAYS" percentWidth="50"/></columnConstraints>
-                <columnConstraints><ColumnConstraints hgrow="ALWAYS" percentWidth="50"/></columnConstraints>
             </GridPane>
 
             <Label text="EXTRAS" styleClass="sci-section-label"/>
-            <GridPane hgap="6" vgap="6">
-                <Button text="π" styleClass="sci-btn sci-btn--const" onAction="#handlePi" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                <Button text="e" styleClass="sci-btn sci-btn--const" onAction="#handleE" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                <Button text="|x|" styleClass="sci-btn" onAction="#handleAbs" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <GridPane hgap="4" vgap="4">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                </columnConstraints>
+                <Button text="PI" styleClass="sci-btn" onAction="#handlePi" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Button text="e" styleClass="sci-btn" onAction="#handleE" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Button text="abs" styleClass="sci-btn" onAction="#handleAbs" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                 <Button text="( )" styleClass="sci-btn" onAction="#handleOpenParen" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                <columnConstraints><ColumnConstraints hgrow="ALWAYS" percentWidth="50"/></columnConstraints>
-                <columnConstraints><ColumnConstraints hgrow="ALWAYS" percentWidth="50"/></columnConstraints>
             </GridPane>
         </VBox>
 
-        <!-- Calculator Core -->
         <VBox styleClass="calc-core" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
 
-            <!-- Display -->
             <VBox styleClass="display-area" alignment="CENTER_RIGHT">
-                <padding><Insets top="20" right="20" bottom="16" left="20"/></padding>
+                <padding><Insets top="20" right="20" bottom="12" left="20"/></padding>
                 <Label fx:id="expressionLabel" styleClass="expression-label" text="" wrapText="true" alignment="CENTER_RIGHT"/>
                 <Label fx:id="resultLabel" styleClass="result-label" text="0" maxWidth="Infinity" alignment="CENTER_RIGHT"/>
             </VBox>
 
-            <!-- Memory row -->
-            <HBox styleClass="memory-row" spacing="4">
-                <padding><Insets top="8" right="12" bottom="4" left="12"/></padding>
+            <HBox styleClass="memory-row" spacing="3">
+                <padding><Insets top="4" right="8" bottom="2" left="8"/></padding>
                 <Button text="MC" styleClass="mem-btn" onAction="#handleMemoryClear" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
                 <Button text="MR" styleClass="mem-btn" onAction="#handleMemoryRecall" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
                 <Button text="M+" styleClass="mem-btn" onAction="#handleMemoryAdd" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
-                <Button text="M−" styleClass="mem-btn" onAction="#handleMemorySubtract" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button text="M-" styleClass="mem-btn" onAction="#handleMemorySubtract" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
                 <Button text="MS" styleClass="mem-btn" onAction="#handleMemoryStore" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
             </HBox>
 
-            <!-- Keypad -->
-            <GridPane styleClass="keypad" hgap="8" vgap="8" VBox.vgrow="ALWAYS">
-                <padding><Insets top="8" right="12" bottom="12" left="12"/></padding>
-
-                <!-- Row 0: AC CE ⌫ ÷ -->
-                <Button text="AC" styleClass="key key--fn" onAction="#handleAllClear" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                <Button text="CE" styleClass="key key--fn" onAction="#handleClearEntry" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                <Button text="⌫" styleClass="key key--fn" onAction="#handleBackspace" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-                <Button text="÷" styleClass="key key--op" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
-
-                <!-- Row 1: 7 8 9 × -->
-                <Button text="7" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                <Button text="8" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                <Button text="9" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-                <Button text="×" styleClass="key key--op" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-
-                <!-- Row 2: 4 5 6 − -->
-                <Button text="4" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                <Button text="5" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                <Button text="6" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                <Button text="−" styleClass="key key--op" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
-
-                <!-- Row 3: 1 2 3 + -->
-                <Button text="1" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                <Button text="2" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-                <Button text="3" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
-                <Button text="+" styleClass="key key--op" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
-
-                <!-- Row 4: +/- 0 . = -->
-                <Button text="+/−" styleClass="key key--fn" onAction="#handleNegate" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-                <Button text="0" styleClass="key key--num" onAction="#handleDigit" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                <Button text="%" styleClass="key key--fn" onAction="#handlePercent" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
-                <Button text="=" styleClass="key key--eq" onAction="#handleEquals" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
-
+            <GridPane styleClass="keypad" hgap="4" vgap="4" VBox.vgrow="ALWAYS">
+                <padding><Insets top="4" right="8" bottom="8" left="8"/></padding>
                 <columnConstraints>
                     <ColumnConstraints hgrow="ALWAYS" percentWidth="25"/>
                     <ColumnConstraints hgrow="ALWAYS" percentWidth="25"/>
@@ -134,11 +101,35 @@
                     <RowConstraints vgrow="ALWAYS"/>
                     <RowConstraints vgrow="ALWAYS"/>
                 </rowConstraints>
+
+                <Button text="AC"  styleClass="key,key--fn"  onAction="#handleAllClear"   GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Button text="CE"  styleClass="key,key--fn"  onAction="#handleClearEntry"  GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Button text="DEL" styleClass="key,key--fn"  onAction="#handleBackspace"   GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <Button text="/"   styleClass="key,key--op"  onAction="#handleOperator"    GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+                <Button text="7"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Button text="8"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Button text="9"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <Button text="x"   styleClass="key,key--op"  onAction="#handleOperator"    GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+                <Button text="4"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Button text="5"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Button text="6"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <Button text="-"   styleClass="key,key--op"  onAction="#handleOperator"    GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+                <Button text="1"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Button text="2"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Button text="3"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                <Button text="+"   styleClass="key,key--op"  onAction="#handleOperator"    GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+
+                <Button text="+/-" styleClass="key,key--fn"  onAction="#handleNegate"      GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <Button text="0"   styleClass="key,key--num" onAction="#handleDigit"       GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Button text="pct" styleClass="key,key--fn"  onAction="#handlePercent"     GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                <Button text="="   styleClass="key,key--eq"  onAction="#handleEquals"      GridPane.columnIndex="3" GridPane.rowIndex="4"/>
             </GridPane>
 
         </VBox>
 
-        <!-- History Panel -->
         <VBox fx:id="historyPanel" styleClass="history-panel" visible="false" managed="false" spacing="0">
             <HBox styleClass="history-header" alignment="CENTER_LEFT" spacing="8">
                 <padding><Insets top="14" right="12" bottom="14" left="14"/></padding>

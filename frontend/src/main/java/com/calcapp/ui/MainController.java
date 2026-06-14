@@ -333,7 +333,11 @@ public class MainController implements Initializable {
         historyVisible = !historyVisible;
         historyPanel.setVisible(historyVisible);
         historyPanel.setManaged(historyVisible);
-        toggleHistoryBtn.getStyleClass().toggle("active");
+        if (toggleHistoryBtn.getStyleClass().contains("active")) {
+            toggleHistoryBtn.getStyleClass().remove("active");
+        } else {
+            toggleHistoryBtn.getStyleClass().add("active");
+        }
         if (historyVisible) refreshHistoryList();
     }
 
